@@ -1,0 +1,31 @@
+.DS_Store
+contributing.md
+
+application/cache/*
+!application/cache/index.html
+!application/cache/.htaccess
+
+application/logs/*
+!application/logs/index.html
+!application/logs/.htaccess
+
+application/vendor/
+vendor/
+
+Homestead.yaml
+/application/config/development
+application/config/database.php
+phinx.yml
+
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*
+
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+composer.phar
