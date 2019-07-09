@@ -1,4 +1,5 @@
 <div class="row">
+	<div class="form-horizontal">
         <div class="col-md-6">
             <div class="panel panel-default panel-shadow" data-collapsed="0">
                 <div class="panel-heading">
@@ -99,14 +100,15 @@
 						<div class="form-group">
 							<label for="field-2" class="col-sm-4 control-label">Tanda Tangan</label>
 							<div class="col-sm-8">
-								<div class="sig sigWrapper" style="height:auto;">
+								<div class="sig sigWrapper" style="width:100%;height:auto;">
 									<div class="typed"></div>
-									<canvas class="sign-pad" id="sign-pad" width="150%" height="100%"></canvas>
+									<canvas class="sign-pad" id="sign-pad" width="300%" height="100%"></canvas>
 								</div>
 							</div>
 						</div>
 						
 						<input type="text" class="form-control" id="meeting-id" name="meeting_id" value="<?php echo $meeting_id;?>" style="display: none">
+						<button class="btn btn-warning" id="btnClear"><i class="fa fa-eraser"></i> Reset</button>
 						<button class="btn btn-info" id="btnSaveSign"><i class="fa fa-save"></i> Simpan Tanda Tangan</button>
 					</div>
 				</div>
@@ -168,11 +170,16 @@
                 </div>
             </div>
         </div>
+    </div>
 </div>
 		
 		<script>
 			$(document).ready(function() {
 				$('#signArea').signaturePad({drawOnly:true, drawBezierCurves:true, lineTop:90});
+			});
+
+			$("#btnClear").click(function(e){
+				$('#signArea').signaturePad().clearCanvas();
 			});
 			
 			$("#btnSaveSign").click(function(e){
